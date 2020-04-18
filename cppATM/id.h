@@ -2,6 +2,7 @@
 #include<fstream>
 #include<io.h>
 #include<string>
+using namespace std;
 class id// 계좌 불러올시 id& pw 및 이체 시 상대 계좌 불러오기용
 {
 private:
