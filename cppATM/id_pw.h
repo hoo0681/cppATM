@@ -4,10 +4,10 @@ class id_pw :
 	protected id
 {
 private: 
-	long PW;//비밀번호
+	string PW;//비밀번호
 public:
 	id_pw() :id() {
-		PW = 0;
+		
 	}
 	id_pw(int* id, long pw) :id(id)
 	{

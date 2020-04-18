@@ -12,7 +12,7 @@ public:
 		{
 			_ID = checked;
 		}
-		/*잔액 불러오기*/
+		balance=SetBal();
 	}
 	account(account& other) {
 		_ID = other._ID;
@@ -20,6 +20,7 @@ public:
 	}
 	void add(long a);//잔액증가
 	void sub(long a);//잔액감소//잔액부족 던짐
+	long SetBal();
 	long GetBal() { return balance; }
 	id GetID() { return _ID; }
 };
