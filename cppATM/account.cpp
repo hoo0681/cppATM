@@ -27,3 +27,19 @@ long account::SetBal()
 	}
 	return 0;
 }
+
+void account::saveData()
+{
+	string tmpbal;
+	size_t beginnum;
+	size_t endnum;
+	string path(this->_ID.Getaccpath());
+	ifstream balpath(path);
+	if (balpath.is_open())
+	{
+		getline(balpath, tmpbal);
+		beginnum = tmpbal.find_first_of("(");
+		endnum = tmpbal.find_first_of(")");
+		tmpbal.replace(tmpbal.begin()+beginnum,tmpbal.begin+endnum,to_string(this->balance));
+	}
+}

@@ -34,8 +34,7 @@ public:
 
 	}
 	~id() {
-		
-		
+			
 	}
 	void setpath();
 	string_view Getaccpath() { return accpath; }

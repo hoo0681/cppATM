@@ -140,12 +140,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="account.cpp" />
+    <ClCompile Include="ATM.cpp" />
+    <ClCompile Include="handler.cpp" />
     <ClCompile Include="id.cpp" />
     <ClCompile Include="id_pw.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="account.h" />
+    <ClInclude Include="ATM.h" />
+    <ClInclude Include="handler.h" />
     <ClInclude Include="id.h" />
     <ClInclude Include="id_pw.h" />
   </ItemGroup>

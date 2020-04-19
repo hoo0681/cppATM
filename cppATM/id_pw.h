@@ -1,7 +1,7 @@
 #pragma once
 #include "id.h"
 class id_pw :
-	protected id
+	public id
 {
 private: 
 	string PW;//비밀번호
