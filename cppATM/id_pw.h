@@ -4,12 +4,12 @@ class id_pw :
 	public id
 {
 private: 
-	string PW;//비밀번호
+	std::string PW;//비밀번호
 public:
 	id_pw() :id() {
 		
 	}
-	id_pw(int* id, long pw) :id(id)
+	id_pw(int* id, std::string pw) :id(id)
 	{
 		PW = pw;
 	}

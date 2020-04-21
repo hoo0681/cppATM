@@ -1,5 +1,6 @@
 #include "account.h"
-
+#include<ostream>
+using namespace std;
 void account::add(long a)
 {
 	balance += a;
@@ -21,8 +22,9 @@ long account::SetBal()
 	if (balpath.is_open())
 	{
 		getline(balpath, tmpbal);
-		beginnum = tmpbal.find_first_of("{");
-		endnum = tmpbal.find_first_of("}");
+		beginnum = tmpbal.find_first_of("(");
+		endnum = tmpbal.find_first_of(")");
+		balpath.close();
 		return stol(tmpbal.substr(beginnum + 1, endnum - beginnum - 1));
 	}
 	return 0;
@@ -35,11 +37,19 @@ void account::saveData()
 	size_t endnum;
 	string path(this->_ID.Getaccpath());
 	ifstream balpath(path);
+	ofstream savepath;
 	if (balpath.is_open())
 	{
 		getline(balpath, tmpbal);
 		beginnum = tmpbal.find_first_of("(");
 		endnum = tmpbal.find_first_of(")");
-		tmpbal.replace(tmpbal.begin()+beginnum,tmpbal.begin+endnum,to_string(this->balance));
+		tmpbal.replace(tmpbal.begin()+beginnum+1,tmpbal.begin()+endnum,to_string(this->balance));
 	}
+	balpath.close();
+	savepath.open(path);
+	if (savepath.is_open())
+	{
+		savepath << tmpbal;
+	}
+	savepath.close();
 }

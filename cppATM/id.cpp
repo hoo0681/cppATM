@@ -1,4 +1,5 @@
 #include "id.h"
+using namespace std;
 void id::setpath()
 {
 	accpath = to_string(ID[0]);

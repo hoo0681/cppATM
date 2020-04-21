@@ -7,9 +7,9 @@ private:
 	long balance;
 public:
 	account() {
-
+		balance = 0;
 	}
-	account(int* _id) {//에러넘김
+	account(int* _id) {//잘못되면 오류넘김
 		_ID = id(_id);
 		if (_ID.ck_id() == false)throw "wrong id";
 		balance = SetBal();

@@ -1,5 +1,5 @@
 #include "id_pw.h"
-
+using namespace std;
 bool id_pw::ck_id()
 {
 	std::string tmpw;
