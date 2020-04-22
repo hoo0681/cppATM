@@ -49,7 +49,7 @@ template<typename T>
  T ATM::onlyNUM(T start, T end)
 {
 	 T input;
-	 cin.ignore(100, '\n');
+	 //cin.ignore(100, '\n');
 	 while (true) {
 		cout << "ют╥б:" << endl;
 		cin >> input;
