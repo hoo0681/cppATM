@@ -22,7 +22,7 @@ private:
 	//출금
 	void withdraw();
 	//이체
-	void transfar();
+	void transfer();
 	//조회
 	void checkAccount();
 public:

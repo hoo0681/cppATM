@@ -10,7 +10,8 @@ bool id_pw::ck_id()
 		getline(file, tmpw);//내용 읽어오기
 		beginnum = tmpw.find_first_of("{");//여는 중괄호 위치
 		endnum = tmpw.find_first_of("}");//닫는 중괄호 위치
-		if (this->PW == tmpw.substr(beginnum + 1, endnum - beginnum - 1))//중괄호 사이의 비밀번호가 입력 받은 비밀번호와 일치하는지 확인
+		//중괄호 사이의 비밀번호가 입력 받은 비밀번호와 일치하는지 확인
+		if (this->PW == tmpw.substr(beginnum + 1, endnum - beginnum - 1))
 		{
 			file.close();//파일 닫기
 			return true;//참 반환

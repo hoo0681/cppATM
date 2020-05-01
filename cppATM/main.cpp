@@ -1,6 +1,4 @@
 #include<iostream>
-#include"account.h"
-#include"handler.h"
 #include "ATM.h"
 int main()
 {

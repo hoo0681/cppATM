@@ -8,7 +8,8 @@ void account::add(long a)
 
 void account::sub(long a)
 {
-	if ((balance - a) < 0) throw "잔액부족";//잔액 부족시 throw 함
+	//잔액 부족시 throw 함
+	if ((balance - a) < 0) throw "잔액부족";
 	balance -= a;//잔액 감소
 }
 
@@ -25,7 +26,8 @@ long account::SetBal()
 		beginnum = tmpbal.find_first_of("(");//여는 괄호 위치 찾기
 		endnum = tmpbal.find_first_of(")");//닫는 괄호 위치 찾기
 		balpath.close();//파일 닫기
-		return stol(tmpbal.substr(beginnum + 1, endnum - beginnum - 1));//괄호 사이의 잔액 읽어오기
+		//괄호 사이의 잔액 읽어오기
+		return stol(tmpbal.substr(beginnum + 1, endnum - beginnum - 1));
 	}
 	return 0;
 }
@@ -43,7 +45,9 @@ void account::saveData()
 		getline(balpath, tmpbal);//내용 긁어오기
 		beginnum = tmpbal.find_first_of("(");//여는 괄호 찾기
 		endnum = tmpbal.find_first_of(")");//닫는 괄호 찾기
-		tmpbal.replace(tmpbal.begin()+beginnum+1,tmpbal.begin()+endnum,to_string(this->balance));//긁어온 내용에서 괄호 사이의 값을 새로운 값으로 대치하기
+		//긁어온 내용에서 괄호 사이의 값을 새로운 값으로 대치하기
+		tmpbal.replace(tmpbal.begin()+beginnum+1,\
+		  tmpbal.begin()+endnum,to_string(this->balance));
 	}
 	balpath.close();//파일 닫기
 	savepath.open(path);//쓰기용으로 파일 열기

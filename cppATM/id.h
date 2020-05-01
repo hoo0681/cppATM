@@ -13,8 +13,7 @@ public:
 	id() {//기본생성자
 		for (int i = 0; i < 3; i++) {
 			ID[i] = 0;
-		}
-		
+		}		
 	}
 	//id 를 인수로 받는 생성자
 	id(int* id) 
@@ -24,8 +23,7 @@ public:
 		}
 		setpath();//계좌 번호로 파일 경로 만들기
 		if (ck_id()) {//계좌의 유무확인
-			setName();//이름 불러오기
-			
+			setName();//이름 불러오기			
 		}
 	}
 	//복사 생성자
@@ -37,9 +35,7 @@ public:
 		name = other.name;//이름 복사
 		setpath();//경로 만들기
 	}
-	~id() {
-			
-	}
+	~id() {}
 	//계좌 번호로 파일 경로 만들기
 	void setpath();
 	//파일경로 반환

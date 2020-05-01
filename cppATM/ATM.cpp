@@ -41,7 +41,7 @@ long ATM::moneyIN()
 {
 	long tmpMoney;//변수
 	cout << "금액을 입력하세요" << endl;
-	tmpMoney = onlyNUM(1l, LONG_MAX);//1~long의 최대값 사이의 값을 입력받아 저장
+	tmpMoney = onlyNUM<long>(1l, LONG_MAX);//1~long의 최대값 사이의 값을 입력받아 저장
 	return tmpMoney;//반환
 }
 
@@ -76,7 +76,7 @@ void ATM::menu()//메뉴창
 			cout << "[2]입금" << endl;
 			cout << "[3]출금" << endl;
 			cout << "[4]이체" << endl;
-			idx = onlyNUM((int)1, (int)5); //기능선택
+			idx = onlyNUM<int>(1,5); //기능선택
 			login();//계좌 로그인
 			switch (idx)//기능
 			{
@@ -90,7 +90,7 @@ void ATM::menu()//메뉴창
 				withdraw();//출금
 				break;
 			case 4:
-				transfar();//계좌이체
+				transfer();//계좌이체
 				break;
 			default:
 				exit(0);//ATM종료
@@ -123,7 +123,7 @@ void ATM::withdraw()//출금
 	checkAccount();//출금후 잔액 조회
 }
 
-void ATM::transfar()//이체
+void ATM::transfer()//이체
 {
 	long money;
 	account traget=tagetid();//이체 대상의 계좌를 불러온다, 없는 계좌면 메세지 throw
