@@ -17,6 +17,7 @@ bool id_pw::ck_id()
 			return true;//참 반환
 		}
 		else {
+			file.close();//파일 닫기
 			return false;//거짓 반환
 		}
 	}
